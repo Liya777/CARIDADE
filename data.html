@@ -1,7 +1,250 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      .card{
+  height: 300px;
+}
+.quotes {
+  width: 80vw;
+  height: 400px;
+  min-height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.quotes .box {
+  position: relative;
+  width: 25vw;
+  height: 500px;
+  /* min-height: 320px; */
+  background: #74bdaa;
+  overflow: hidden;
+  transition: all 0.4s ease-in;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 30px;
+  box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.quotes .box::before {
+  content: '\201C';
+  position: absolute;
+  top: -20px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  font-size: 120px;
+  opacity: 0.2;
+  background: transparent;
+  pointer-events: none;
+}
+
+.quotes .box::after {
+  content: '\201D';
+  position: absolute;
+  height: 500px;
+  bottom: -10%;
+  right: 5%;
+  font-size: 120px;
+  opacity: 0.2;
+  background: transparent;
+  filter: invert(1);
+  pointer-events: none;
+}
+
+.quotes .box p {
+  margin: 0;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+.quotes .box h2 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: 10%;
+  right: 10%;
+  font-size: 1.5rem;
+}
+
+.quotes .box:hover {
+  color: #f2f2f2;
+  box-shadow: 20px 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.quotes .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s ease-in;
+  pointer-events: none;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.quotes .box.box1:hover,
+.quotes .box.box1:hover~.bg {
+  opacity: 1;
+  background: #a9e5c7;
+background: -moz-linear-gradient(-45deg, #7fe2b4 15%, #088383 100%);
+background: -webkit-linear-gradient(-45deg, #85c996 15%,#088383 100%);
+background: linear-gradient(135deg, #9fd8a2 15%,#088383 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2a9e5', endColorstr='#2b94e5',GradientType=1 );
+}
+
+.quotes .box.box2:hover,
+.quotes .box.box2:hover~.bg {
+  opacity: 1;
+  background: #632c65;
+  background: -moz-linear-gradient(-45deg, #7fe2b4 15%, #088383 100%);
+  background: -webkit-linear-gradient(-45deg, #85c996 15%,#088383 100%);
+  background: linear-gradient(135deg, #9fd8a2 15%,#088383 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#632c65', endColorstr='#56a5e2',GradientType=1 );
+}
+
+.quotes .box.box3:hover,
+.quotes .box.box3:hover~.bg {
+  opacity: 1;
+  background: #3f1d41;
+  background: -moz-linear-gradient(-45deg, #7fe2b4 15%, #008080 100%);
+  background: -webkit-linear-gradient(-45deg, #85c996 15%,#008080 100%);
+  background: linear-gradient(135deg, #9fd8a2 15%,#008080 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b384c', endColorstr='#da5de2',GradientType=1 );
+}
+.container{
+  /* padding-left: 55px; */
+  color: #008080;
+  align-items: center;
+  padding-left: 25px;
+}
+
+.page-footer{
+  background-color: rgb(29, 116, 75);
+  color: white;
+}
+
+
+
+
+
+ team-grid {
+  background-image: linear-gradient(#3F51B5, #1A237E);
+  background-repeat: no-repeat;
+  color: #000;
+  overflow-x: hidden;
+} 
+/* 
+p {
+  color: #fff
+} */
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: #fff
+}
+
+@media (max-width:767px) {
+  h2 {
+      margin-bottom: 25px;
+      padding-top: 25px;
+      font-size: 24px
+  }
+}
+
+.intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto
+}
+
+.intro p {
+  margin-bottom: 0
+}
+
+.people {
+  padding: 50px 0;
+  cursor: pointer
+}
+
+.item {
+  margin-bottom: 30px
+}
+
+.item .boxs {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  position: relative;
+  overflow: hidden
+}
+
+.item .cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:rgb(0, 128, 85);
+  transition: opacity 0.15s ease-in;
+  opacity: 0.7;
+  padding-top: 80px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15)
+}
+
+.item:hover .cover {
+  opacity: 1
+}
+
+.item .name {
+  font-weight: bold;
+  margin-bottom: 8px
+}
+
+.item .title {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #bbd8fb;
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-bottom: 20px
+}
+
+.social {
+  font-size: 18px
+}
+
+.social a {
+  color: inherit;
+  margin: 0 10px;
+  display: inline-block;
+  opacity: 0.7
+}
+
+.social a:hover {
+  opacity: 1
+}
+td, p {
+  font: 14px Verdana;
+  color:rgb(245, 241, 241);
+}
+
+
+    </style>
+  </head>
+
 <body style="background-color: rgb(47, 153, 118); color: white;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">CARIDADE</a>
